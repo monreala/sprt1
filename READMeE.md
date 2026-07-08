@@ -8,6 +8,13 @@
 Каждый модуль крутится вокруг одной и той же доменной модели — **Reward Network**, программы лояльности «оплата ужина → начисление на счёт → распределение по бенефициарам». Это удобно: бизнес-логика общая, меняется только тот слой Spring/Spring Boot, который изучается в конкретной лабе.
 
 Сборка:
+Goal: Know concepts, Create Spring Batch job with custom processor and tasklet
+1. Create Spring Batch Application with annotations/XML configutation, see resources
+2. Create Job to import csv file to DB, same logic as in task 6 from document 
+Add reading from file and writing to database features for your domain . Use refactoring to keep code clean and low coupled. Use isValid() before inserting into database table. You will need to install
+3. Add validation processor
+4. Add Tasklet to move csv file after importing, into another folder
+5*. (optional) Create another Job to read data from two DB Tables, and write to flat csv file.
 - **Maven:** `cd lab && ./mvnw clean verify`
 - **Gradle:** `cd lab && ./gradlew build`
 - БД во всех модулях — embedded HSQL, ничего ставить локально не нужно (для модулей с JPA — Hibernate, тоже встроенный).
